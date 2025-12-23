@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Movie Quotes Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Movie Quotes RAG Search</h1>
+        <p class="subtitle">Semantic search through famous movie quotes using AI embeddings</p>
+      </header>
+
+      <main>
+        <!-- Search Section -->
+        <section class="search-section">
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for quotes (e.g., 'quotes about hope', 'Star Wars quotes', 'romantic movie lines')" autocomplete="off" />
+            <button id="searchBtn" onclick="performSearch()">
+              <span class="btn-text">Search</span>
+            </button>
+          </div>
+
+          <!-- Advanced Options -->
+          <div class="advanced-options">
+            <div class="option">
+              <label for="topK">Results to show:</label>
+              <input type="number" id="topK" min="1" max="20" value="5" />
+            </div>
+            <div class="option">
+              <label for="threshold">Similarity threshold:</label>
+              <input type="range" id="threshold" min="0" max="1" step="0.05" value="0.3" />
+              <span id="thresholdValue">0.3</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Status Messages -->
+        <div id="statusMessage" class="status-message hidden"></div>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+          <div class="results-header">
+            <h2>Search Results</h2>
+            <span id="resultsCount" class="results-count"></span>
+          </div>
+          <div id="resultsContainer" class="results-container"></div>
+        </section>
+
+        <!-- Empty State -->
+        <section id="emptyState" class="empty-state">
+          <h3>Ready to Search</h3>
+          <p>Enter a query above to find relevant movie quotes.</p>
+          <div class="example-queries">
+            <p>Try searching for:</p>
+            <ul>
+              <li><button class="example-btn" onclick="setQuery('quotes about love')">quotes about love</button></li>
+              <li><button class="example-btn" onclick="setQuery('inspirational movie quotes')">inspirational movie quotes</button></li>
+              <li><button class="example-btn" onclick="setQuery('The Godfather')">The Godfather</button></li>
+              <li><button class="example-btn" onclick="setQuery('courage and bravery')">courage and bravery</button></li>
+              <li><button class="example-btn" onclick="setQuery('funny quotes')">funny quotes</button></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-content">
+          <p>RAG Retrieval System</p>
+          <div class="system-info">
+            <span id="dbStatus" class="db-status">Checking database...</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="spinner"></div>
+      <p>Searching...</p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
