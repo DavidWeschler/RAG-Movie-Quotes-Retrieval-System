@@ -36,7 +36,6 @@ async function initializeApp() {
 
 // Set up event listeners
 function setupEventListeners() {
-  // Enter key to search
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       performSearch();
