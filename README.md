@@ -5,8 +5,8 @@ A semantic search system for movie quotes using Retrieval-Augmented Generation (
 ---
 
 <div style="display: flex; gap: 16px; align-items: flex-start;">
-  <img src="screenshots/ui.png" alt="UI Screenshot" width="500"/>
-  <img src="screenshots/search_results.png" alt="Search Results Screenshot" width="500"/>
+  <img src="screenshots/ui.png" alt="UI Screenshot" width="400"/>
+  <img src="screenshots/search_results.png" alt="Search Results Screenshot" width="400"/>
 </div>
 
 ---
